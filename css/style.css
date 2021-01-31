@@ -69,16 +69,19 @@
     }
     .trends-post {
         width: 25%;
+        max-height: 320px;
     }
     .trends-post:nth-child(n+2) {
         margin-left: 4px;
     }
     .trends-container {
         justify-content: space-between;
-        max-height: 320px;
     }
     .main {
         width: 100%;
+    }
+    .main-post:nth-child(n+2) {
+        margin-top: 60px;
     }
     .main-post-preview {
         margin-right: 30px;
@@ -87,11 +90,29 @@
         width: 380px;
     }
     .sidebar {
+        width: 270px;
         margin-left: 11%;
+    }
+    .sidebar-post {
+        justify-content: space-between;
+    }
+    .sidebar-post-info {
+        width: 180px;
+    }
+    .search-input {
+        width: 222px;
+    }
+    .subscription-input {
+        width: 270px;
+    }
+    .subscription-button {
+        width: 270px;
     }
     .shop-container {
         justify-content: space-between;
-        margin-bottom: 84px;
+    }
+    .shop-card {
+        max-width: 30%;
     }
 }
 
@@ -152,13 +173,16 @@
         margin-bottom: 64px;
         justify-content: space-between;
     }
+    .trends {
+        margin-bottom: 50px;
+    }
     .trends-container {
         flex-wrap: wrap;
-        max-height: 245px;
     }
     .trends-post {
         align-items: stretch;
         flex-basis: 49.5%;
+        max-height: 245px;
         background-color: #000000;
         position: relative;
         overflow: hidden;
@@ -166,9 +190,6 @@
     }
     .main-post {
         flex-direction: column;
-    }
-    .main-post-image {
-        width: 100%;
     }
     .main-post::after {
         content: "";
@@ -183,9 +204,26 @@
     .sidebar {
         margin-left: 7%;
     }
+    .sidebar-post {
+        justify-content: space-between;
+    }
+    .sidebar-post-info {
+        width: 180px;
+    }
+    .search-input {
+        width: 222px;
+    }
+    .subscription-input {
+        width: 270px;
+    }
+    .subscription-button {
+        width: 270px;
+    }
     .shop-container {
-        flex-wrap: wrap;
-        margin-bottom: 84px;
+        justify-content: space-between;
+    }
+    .shop-card {
+        max-width: 46%;
     }
 }
 
@@ -207,6 +245,7 @@
     .container {
         padding-left: 16px;
         padding-right: 16px;
+        align-items: center;
     }
     .welcome {
         height: 100vh;
@@ -214,9 +253,10 @@
     }
     .nav-line {
         flex-direction: column-reverse;
-        align-items: flex-end;
+        align-items: center;
         justify-content: space-between;
         height: 193px;
+        margin-bottom: 45px;
     }
     .header-logo {
         width: 100%;
@@ -230,22 +270,30 @@
         background-image: url("../svg/menu-burger.svg");
         background-repeat: no-repeat;
         outline: none;
-        width: 23px;
-        height: 23px;
+        width: 20px;
+        height: 24px;
         cursor: pointer;
+        position: absolute;
+        top: 31px;
+        right: 15px;
+    }
+    .trends {
+        margin-bottom: 44px;
     }
     .trends-container {
         flex-direction: column;
         justify-content: space-between;
     }
     .trends-post {
-        height: 230px;
+        max-height: 230px;
+        margin-bottom: 4px;
     }
     .content {
         flex-direction: column;
     }
     .main {
         flex-grow: 1;
+        max-width: 380px;
     }
     .main-post {
         flex-direction: column;
@@ -259,6 +307,27 @@
         margin-right: auto;
         margin-top: 12px;
         margin-bottom: 40px;
+    }
+    .sidebar {
+        max-width: 380px;
+    }
+    .search-input {
+        width: 332px;
+    }
+    .subscription-input {
+        width: 100%;
+    }
+    .subscription-button {
+        width: 100%;
+    }
+    .shop {
+        max-width: 400px;
+    }
+    .shop-container {
+        justify-content: space-around;
+    }
+    .shop-card {
+        max-width: 100%;
     }
 }
 
@@ -276,10 +345,6 @@ body {
 
 .wrapper {
     width: 100%;
-}
-
-.container {
-    box-sizing: border-box;
 }
 
 .content {
@@ -442,8 +507,6 @@ h4 {
     display: fixed;
     top: 0px;
     left: 0px;
-    width: 100vw;
-    height: 100vh;
 }
 
 .popup::before {
@@ -668,10 +731,6 @@ h4 {
     display: flex;
 }
 
-.main-post:nth-child(n+2) {
-    margin-top: 60px;
-}
-
 .main-post-tags {
     display: flex;
     flex-wrap: wrap;
@@ -739,10 +798,6 @@ h4 {
     color: #000000;
 }
 
-.sidebar {
-    width: 270px;
-}
-
 .sidebar-block:nth-child(n+2) {
     margin-top: 60px;
 }
@@ -768,7 +823,6 @@ h4 {
 
 .sidebar-post {
     display: flex;
-    justify-content: space-between;
 }
 
 .sidebar-post:nth-child(n+2) {
@@ -781,7 +835,6 @@ h4 {
 
 .sidebar-post-info {
     display: block;
-    width: 180px;
 }
 
 .sidebar-post-title {
@@ -810,10 +863,6 @@ h4 {
     display: flex;
 }
 
-.search-input {
-    width: 222px;
-}
-
 .search-button {
     background-image: url("../svg/search.svg");
     width: 48px;
@@ -829,14 +878,6 @@ h4 {
 
 .form-row:nth-child(n+2) {
     margin-top: 15px;
-}
-
-.subscription-input {
-    width: 270px;
-}
-
-.subscription-button {
-    width: 270px;
 }
 
 .tags-list {
@@ -918,6 +959,7 @@ h4 {
 
 .shop-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .shop-card {
@@ -925,19 +967,18 @@ h4 {
     flex-direction: column;
     align-items: center;
     color: #000000;
-    max-width: 345px;
     position: relative;
+    margin-bottom: 84px;
 }
 
 .shop-card-container {
     outline: 3px solid #b59f5b;
-    outline-offset: 1.4em;
+    outline-offset: 14px;
     height: 76%;
-    width: 86%;
 }
 
 .shop-card-preview {
-    width: 86%;
+    max-width: 100%;
 }
 
 .shop-card-img {
