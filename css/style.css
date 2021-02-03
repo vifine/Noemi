@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Open Sans";
-    src: url("/fonts/OpenSans-Regular.woff");
+    src: url("fonts/OpenSans-Regular.woff");
     font-style: normal;
     font-weight: 400;
 }
@@ -116,7 +116,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width:1199px) {
+@media (min-width: 768px) and (max-width: 1199px) {
     h1 {
         font-size: 4em;
         margin-top: 0;
@@ -504,9 +504,9 @@ h4 {
 /* popup */
 
 .popup {
-    display: fixed;
-    top: 0px;
-    left: 0px;
+    position: fixed;
+    margin: 0px auto;
+    z-index: 1;
 }
 
 .popup::before {
@@ -520,20 +520,19 @@ h4 {
 
 .popup-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: center;
+    margin-top: 20%;
 }
 
 .cross {
-    position: absolute;
-    top: -0px;
-    right: 30px;
-    transition: all 200ms;
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
     color: #ffffff;
     cursor: pointer;
+    z-index: 2;
 }
 
 .popup-content {
