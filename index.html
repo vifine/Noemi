@@ -9,12 +9,13 @@
 </head>
 
 <body>
-    <div class="popup">
+    <div class="popup visually-hidden">
         <div class="popup-container">
-            <div class="cross">
+            <span class="cross">
                 <a>×</a>
-            </div>
+            </span>
             <div class="popup-content">
+
 
                 <h2 class="popup-title">Ваш фидбек</h2>
                 <form class="popup-form">
@@ -32,20 +33,20 @@
                         <div class="radio-buttons" id="radio-buttons">
                             <div class="radio">
                                 <input type="radio" id="Yes" name="example" checked />
-                                <label for="Yes"></label>
-                                <span>Да</span>
+                                <label for="Yes">
+                                <span class="radio-var">Да</span></label>
                             </div>
                             <div class="radio">
                                 <input type="radio" id="No" name="example" />
-                                <label for="No"></label>
-                                <span>Нет</span>
+                                <label for="No"><span class="radio-var">
+                                Нет</span></label>
                             </div>
                         </div>
                     </div>
 
                     <div class="popup-field">
                         <span>Расскажите, какой контент вы хотели бы видеть на нашем сайте?</span>
-                        <textarea class="textarea-field popup-textarea popup-field" placeholder="Может больше рецептов.."></textarea>
+                        <textarea class="textarea-field popup-textarea popup-field" placeholder="Может больше рецептов?"></textarea>
                     </div>
 
                     <button class="button popup-button" type="submit">Отправить</button>

@@ -27,6 +27,10 @@
     h3 {
         font-size: 1.4em;
     }
+    .popup-container {
+        width: 20%;
+        min-width: 390px;
+    }
     .container {
         width: 1200px;
         margin-right: auto;
@@ -130,6 +134,10 @@
     h3 {
         font-size: 1.7em;
     }
+    .popup-container {
+        width: 50%;
+        min-width: 390px;
+    }
     .container {
         padding-left: 35px;
         padding-right: 35px;
@@ -204,9 +212,6 @@
     .sidebar {
         margin-left: 7%;
     }
-    .sidebar-post {
-        justify-content: space-between;
-    }
     .sidebar-post-info {
         width: 180px;
     }
@@ -241,6 +246,9 @@
     h3 {
         font-size: 1.6em;
         line-height: 2em;
+    }
+    .popup-container {
+        width: 80%;
     }
     .container {
         padding-left: 16px;
@@ -308,11 +316,11 @@
         margin-top: 12px;
         margin-bottom: 40px;
     }
-    .sidebar {
-        max-width: 380px;
+    .main-post-image {
+        max-width: 100%;
     }
     .search-input {
-        width: 332px;
+        width: calc(100% - 48px);
     }
     .subscription-input {
         width: 100%;
@@ -402,8 +410,6 @@ h4 {
 }
 
 .select-field {
-    font-family: inherit;
-    font-size: 13px;
     box-sizing: border-box;
     padding: 0 15px 0 15px;
     border: 0px;
@@ -417,7 +423,6 @@ h4 {
     background-size: 1em;
     padding-right: 35px;
     color: #1f0808;
-    outline: none;
 }
 
 .select-field:focus {
@@ -431,6 +436,10 @@ h4 {
     display: inline-block;
 }
 
+.radio:nth-child(n+2) {
+    margin-left: 25px;
+}
+
 .radio input[type="radio"] {
     display: none;
 }
@@ -442,7 +451,6 @@ h4 {
     height: 16px;
     border: 1px solid #b59f5b;
     border-radius: var(--border-radius);
-    box-sizing: border-box;
 }
 
 .radio label::before {
@@ -462,10 +470,11 @@ h4 {
     background-color: #b59f5b;
 }
 
+.radio-var {
+    padding-left: 20px;
+}
+
 .textarea-field {
-    font-family: inherit;
-    font-size: 13px;
-    box-sizing: border-box;
     padding: 15px;
     border: 0px;
     height: 48px;
@@ -505,34 +514,36 @@ h4 {
 
 .popup {
     position: fixed;
-    margin: 0px auto;
-    z-index: 1;
-}
-
-.popup::before {
-    content: "";
-    position: fixed;
-    background-color: #000000;
-    opacity: 0.7;
-    width: 100vw;
-    height: 100vh;
-}
-
-.popup-container {
+    /* Закрепить позицию на экране, задний фон прокручивается */
+    top: 0;
+    /* Прижать к верху*/
+    left: 0;
+    /* Прижать к левой стороне*/
+    width: 100%;
+    /* занять всю доступную ширину */
+    height: 100%;
+    /* занять всю доступную высоту */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* черный оверлей 70% */
+    z-index: 999;
+    /* верхний слой относительно элементов с меньшим индексом*/
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    /* флекс-бокс сделать, чтобы применялись свойства ниже*/
+    align-items: center;
+    /* центрировать по дополнительной оси */
     justify-content: center;
-    margin-top: 20%;
+    /* Центрировать по основной оси*/
 }
 
 .cross {
+    position: absolute;
+    left: 20%;
+    top: 32px;
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
     color: #ffffff;
     cursor: pointer;
-    z-index: 2;
 }
 
 .popup-content {
@@ -565,6 +576,7 @@ h4 {
     width: 100%;
     margin-top: 0.5rem;
     margin-bottom: 1.3rem;
+    font-size: 1.3em;
 }
 
 .popup-textarea {
@@ -798,7 +810,7 @@ h4 {
 }
 
 .sidebar-block:nth-child(n+2) {
-    margin-top: 60px;
+    margin: 30px 0 30px;
 }
 
 .sidebar-main-title {
