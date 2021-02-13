@@ -97,17 +97,14 @@
         width: 270px;
         margin-left: 11%;
     }
+    .sidebar-block {
+        max-width: 270px;
+    }
     .sidebar-post {
         justify-content: space-between;
     }
     .sidebar-post-info {
         width: 180px;
-    }
-    .search-input {
-        width: 222px;
-    }
-    .subscription-input {
-        width: 270px;
     }
     .subscription-button {
         width: 270px;
@@ -212,14 +209,11 @@
     .sidebar {
         margin-left: 7%;
     }
+    .sidebar-block {
+        max-width: 270px;
+    }
     .sidebar-post-info {
         width: 180px;
-    }
-    .search-input {
-        width: 222px;
-    }
-    .subscription-input {
-        width: 270px;
     }
     .subscription-button {
         width: 270px;
@@ -259,11 +253,13 @@
         height: 100vh;
         background-image: url('../images/banner-mobile.jpg');
     }
+    .welcome-container {
+        height: 100%;
+    }
     .nav-line {
         flex-direction: column-reverse;
         align-items: center;
         justify-content: space-between;
-        height: 193px;
         margin-bottom: 45px;
     }
     .header-logo {
@@ -301,7 +297,7 @@
     }
     .main {
         flex-grow: 1;
-        max-width: 380px;
+        max-width: 370px;
     }
     .main-post {
         flex-direction: column;
@@ -319,17 +315,14 @@
     .main-post-image {
         max-width: 100%;
     }
-    .search-input {
-        width: calc(100% - 48px);
-    }
-    .subscription-input {
-        width: 100%;
+    .sidebar-block {
+        max-width: 370px;
     }
     .subscription-button {
         width: 100%;
     }
     .shop {
-        max-width: 400px;
+        max-width: 370px;
     }
     .shop-container {
         justify-content: space-around;
@@ -402,6 +395,7 @@ h4 {
     background-color: #f4f7f6;
     color: #1f0808;
     outline: none;
+    width: 100%;
 }
 
 .input-field:focus {
@@ -513,6 +507,7 @@ h4 {
 /* popup */
 
 .popup {
+    display: none;
     position: fixed;
     /* Закрепить позицию на экране, задний фон прокручивается */
     top: 0;
@@ -535,10 +530,14 @@ h4 {
     /* Центрировать по основной оси*/
 }
 
+.popup-container {
+    position: relative;
+}
+
 .cross {
     position: absolute;
-    left: 20%;
-    top: 32px;
+    right: 0;
+    top: -40px;
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
@@ -620,6 +619,9 @@ h4 {
 
 .welcome-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .nav-line {
@@ -872,11 +874,22 @@ h4 {
 
 .search-form {
     display: flex;
+    flex-basis: 100%;
+}
+
+.sidebar-label {
+    width: 332px;
+}
+
+.subscription-input {
+    width: 100%;
 }
 
 .search-button {
     background-image: url("../svg/search.svg");
-    width: 48px;
+    display: flex;
+    flex-basis: 48px;
+    padding: 0 24px;
 }
 
 .visually-hidden {
